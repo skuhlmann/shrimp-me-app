@@ -22,6 +22,7 @@
     <tr>
       <th>Full Url</th>
       <th>Shrimped Url</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -29,6 +30,7 @@
     <tr>
       <td><%= url.full_url %></td>
       <td><%= "http://shrimped.me/#{url.slug}" %></td>
+      <td><%= link_to "Test Me", url_path(url.slug) %></td>
     </tr>
   <% end %>
   </tbody>
