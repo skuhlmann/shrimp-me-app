@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20150201020229) do
   create_table "urls", force: :cascade do |t|
     t.string   "full_url"
     t.string   "slug"
-    t.integer  "visit"
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,6 +1,35 @@
 <h1>Shrimpy Me</h1>
 
 <%= simple_form_for @url do |f| %>
-  <%= f.input :full_url, placeholder: "Your Long URL" %>
+
+  <% if @url.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(@url.errors.count, "error") %> prohibited this url from being shrimped:</h2k
+        <ul>
+        <% @url.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <%= f.input :full_url, label: "Enter Your URL",  placeholder: "Must Include 'http://'" %>
   <%= f.submit 'Shrimpy Me' %>
 <% end %>
+
+<table id="active-shrimps">
+  <thead>
+    <tr>
+      <th>Full Url</th>
+      <th>Shrimped Url</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @urls.each do |url| %>
+    <tr>
+      <td><%= url.full_url %></td>
+      <td><%= "http://shrimped.me/#{url.slug}" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
