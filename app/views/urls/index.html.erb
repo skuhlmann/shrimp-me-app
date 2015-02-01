@@ -1,1 +1,6 @@
 <h1>Shrimpy Me</h1>
+
+<%= simple_form_for @url do |f| %>
+  <%= f.input :full_url, placeholder: "Your Long URL" %>
+  <%= f.submit 'Shrimpy Me' %>
+<% end %>
