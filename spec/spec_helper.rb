@@ -1,6 +1,11 @@
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+  add_filter '/config/'
+end
+require 'factory_girl_rails'
 require "webmock/rspec"
 
-# http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.syntax = :expect
@@ -11,6 +16,8 @@ RSpec.configure do |config|
   end
 
   config.order = :random
+
+  config.include FactoryGirl::Syntax::Methods
 end
 
 WebMock.disable_net_connect!(allow_localhost: true)
