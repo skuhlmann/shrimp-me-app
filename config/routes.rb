@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   resources :urls, only: [:create]
 
+  resources :urls, path: "",  param: :slug, only: [:show]
+  # resources :urls, path: "r",  param: :slug, only: [:show]
+
 end
