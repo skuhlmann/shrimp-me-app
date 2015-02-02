@@ -1,4 +1,6 @@
 class Url < ActiveRecord::Base
+  has_many :visits
+
   validates :full_url, presence: true
   validates :slug, uniqueness: true
 

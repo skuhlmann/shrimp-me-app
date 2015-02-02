@@ -9,4 +9,16 @@ RSpec.describe UrlsController do
 
     expect(response.header["Location"]).to eq(url.full_url)
   end
+
+  it "counts a visit for the url each time the shortened url is visited" do
+    url = create(:url)
+
+    get(:show, slug: url.slug)
+
+    expect(url.visits.count).to eq(1)
+
+    get(:show, slug: url.slug)
+
+    expect(url.visits.count).to eq(2)
+  end
 end
