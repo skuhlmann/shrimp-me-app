@@ -13,8 +13,6 @@ describe "Statistics", type: :feature do
 
     choose("Visits (click to sort by popularity)")
 
-    binding.pry
-
     expect(url.slug).to appear_before(newer_url.slug)
   end
 end
