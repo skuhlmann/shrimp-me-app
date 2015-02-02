@@ -1,5 +1,4 @@
 class UrlsController < ApplicationController
-
   def index
     @url = Url.new
     @urls = Url.order(created_at: :desc)
@@ -8,6 +7,7 @@ class UrlsController < ApplicationController
   def show
     @url = Url.find_by(slug: params[:slug])
     if @url.presence
+      Visit.create(url_id: @url.id)
       redirect_to @url.full_url
     else
       flash[:notice] = "Redirect doesn't exist"
@@ -29,7 +29,5 @@ class UrlsController < ApplicationController
 
   def url_params
     params.require(:url).permit(:full_url)
-
   end
-
 end

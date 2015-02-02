@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Url, :type => :model do
 
@@ -22,6 +22,11 @@ RSpec.describe Url, :type => :model do
     another_url.slug = url.slug
 
     expect(another_url).not_to be_valid
+  end
 
+  it "has many visits" do
+    url = create(:url)
+
+    expect(url).to respond_to(:visits)
   end
 end

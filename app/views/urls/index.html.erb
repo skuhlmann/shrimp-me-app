@@ -17,11 +17,17 @@
   <%= f.submit 'Shrimpy Me' %>
 <% end %>
 
-<table id="active-shrimps">
+<table id="active-shrimps" name="active-shrimps">
   <thead>
     <tr>
       <th>Full Url</th>
       <th>Shrimped Url</th>
+      <th>
+        <%= form_tag do %>
+          <%= label_tag(:sort_popularity, "Visits (click to sort by popularity)") %>
+          <%= radio_button_tag(:sort, "popularity") %>
+        <% end %>
+      </th>
       <th></th>
     </tr>
   </thead>
@@ -30,6 +36,7 @@
     <tr>
       <td><%= url.full_url %></td>
       <td><%= "http://shrimped.me/#{url.slug}" %></td>
+      <td><%= url.visits.count %></td>
       <td><%= link_to "Test Me", url_path(url.slug) %></td>
     </tr>
   <% end %>
