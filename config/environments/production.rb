@@ -22,8 +22,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.serve_static_assets = true
-  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.serve_static_files = true
   config.static_cache_control = "public, max-age=#{1.year.to_i}"
   # Enable deflate / gzip compression of controller-generated responses
   config.middleware.use Rack::Deflater
@@ -62,7 +61,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = ENV.fetch("ASSET_HOST")
+  # config.action_controller.asset_host = ENV.fetch("ASSET_HOST")
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
