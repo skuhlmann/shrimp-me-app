@@ -10,3 +10,10 @@ development: &default
 test:
   <<: *default
   database: jetfuel_test
+
+production:
+  <<: *default
+  database: jetfuel__production
+  username: jetfuel
+  password: <%= ENV['JETFUEL_DATABASE_PASSWORD'] %>
+
