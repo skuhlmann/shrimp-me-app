@@ -1,0 +1,25 @@
+<table id="active-shrimps" name="active-shrimps">
+  <thead>
+    <tr>
+      <th>Page Title</th>
+      <th>Shrimped Url</th>
+      <th>
+        <%= form_tag do %>
+          <%= label_tag(:sort_popularity, "Visits (click to sort by popularity)") %>
+          <%= radio_button_tag(:sort, "popularity") %>
+        <% end %>
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% urls.each do |url| %>
+    <tr>
+      <td><%= url.title %></td>
+      <td><%= "http://shrimped.me/#{url.slug}" %></td>
+      <td><%= url.visits.count %></td>
+      <td><%= link_to "Test Me", url_path(url.slug) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
