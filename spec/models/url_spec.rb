@@ -29,4 +29,21 @@ RSpec.describe Url, :type => :model do
 
     expect(url).to respond_to(:visits)
   end
+
+  describe "title grabber service" do
+    WebMock.allow_net_connect!
+
+    it "has a title from the full url target page" do
+      url = create(:url)
+
+      expect(url.title).to eq("Making the Switch into a Tech Career")
+    end
+
+    it "can grab a page title for the url" do
+      full_url = "http://blog.turing.io/2014/12/09/making-the-switch-into-a-tech-career/"
+      title =  TitleGrabber.find_title(full_url)
+
+      expect(title).to eq("Making the Switch into a Tech Career")
+    end
+  end
 end
