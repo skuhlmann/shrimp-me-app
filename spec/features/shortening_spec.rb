@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Shortening urls", type: :feature do
-    WebMock.allow_net_connect!
+  WebMock.allow_net_connect!
 
   it "can enter a url and get a short version" do
     visit root_path
@@ -26,7 +26,7 @@ describe "Shortening urls", type: :feature do
   end
 
   it "can see the page title of the redirect page in the url list" do
-    url = create(:url)
+    create(:url)
 
     visit root_path
 

@@ -12,6 +12,6 @@ class Url < ActiveRecord::Base
   end
 
   def grab_title
-    self.title = TitleGrabber.find_title(self.full_url)
+    self.title = TitleGrabber.find_title(full_url)
   end
 end

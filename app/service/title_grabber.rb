@@ -1,5 +1,4 @@
 class TitleGrabber
-
   def self.find_title(url)
     parse_title(Nokogiri::HTML(open(url)))
   end
