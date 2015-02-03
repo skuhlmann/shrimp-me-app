@@ -17,5 +17,12 @@
   <%= f.submit 'Shrimpy Me' %>
 <% end %>
 
-<%= render partial: "application/url_table", locals: {:urls => @urls} %>
+<% unless @urls.empty? %>
+  <hr>
+
+  <h3>Active Shrimpy Urls</h3>
+
+  <%= render partial: "application/url_table", locals: {:urls => @urls} %>
+
+<% end %>
 
