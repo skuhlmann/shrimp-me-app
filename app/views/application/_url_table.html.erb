@@ -19,7 +19,7 @@
   <% urls.each do |url| %>
     <tr>
       <td class="page-title"><%= url.title %></td>
-      <td><%= "http://shrimped.me/#{url.slug}" %></td>
+      <td><%= "shrimpy.me/#{url.slug}" %></td>
       <td><%= url.visits.count %></td>
       <td><%= link_to "Test Me", url_path(url.slug) %></td>
     </tr>
