@@ -1,28 +1,44 @@
-<h1>Shrimpy Me</h1>
+<div id="main-pane">
+  <div class="wrapper">
+    <section>
+      <h1>Shrimpy Me</h1>
+      <div id="shrimpy-form">
+        <%= simple_form_for @url do |f| %>
 
-<%= simple_form_for @url do |f| %>
+          <% if @url.errors.any? %>
+            <div id="error_explanation">
+              <p><%= pluralize(@url.errors.count, "error") %> prohibited this url from being shrimped:</h2>
+              <ul>
+              <% @url.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-  <% if @url.errors.any? %>
-      <div id="error_explanation">
-        <p><%= pluralize(@url.errors.count, "error") %> prohibited this url from being shrimped:</h2>
-        <ul>
-        <% @url.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+        <%= f.input :full_url, label: "Enter your loooooooong URL",  placeholder: "Include http:// or https://" %>
+        <%= f.submit 'Shrimpy Me' %>
+      <% end %>
+
       </div>
-    <% end %>
+      <div id="nav-arrow">
+        <p>Want to see some stats?</p>
+        <a id="arrow" class="fa fa-chevron-down fa-4x" href="#stats"></a>
+      </div>
 
-  <%= f.input :full_url, label: "Enter Your URL",  placeholder: "Include http:// or https://" %>
-  <%= f.submit 'Shrimpy Me' %>
-<% end %>
+    </section>
+  </div>
+</div>
+<div id="stat-pane">
+  <div class="wrapper">
+    <section>
+      <% unless @urls.empty? %>
+        <hr>
+        <a name="stats"></a>
 
-<% unless @urls.empty? %>
-  <hr>
+          <%= render partial: "application/url_table", locals: {:urls => @urls} %>
 
-  <h3>Active Shrimpy Urls</h3>
-
-  <%= render partial: "application/url_table", locals: {:urls => @urls} %>
-
-<% end %>
-
+      <% end %>
+    </section>
+  </div>
+</div>

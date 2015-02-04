@@ -1,8 +1,8 @@
 // Typography
-$sans-serif: $helvetica;
-$serif: $georgia;
+$sans-serif: 'Alice', serif;
+$serif: 'Playfair Display', serif;
 $base-font-family: $sans-serif;
-$header-font-family: $base-font-family;
+$header-font-family: $serif;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -18,21 +18,25 @@ $base-line-height: 1.5;
 $header-line-height: 1.25;
 
 // Other Sizes
-$base-border-radius: 3px;
+$base-border-radius: .3em;
 $base-spacing: $base-line-height * 1em;
 $base-z-index: 0;
 
 // Colors
-$blue: #477DCA;
+$blue: #87D6D0;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #DDD;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
-$light-green: #E6EFC2;
+$light-green: #EDEDB6;
+$pink: #FF9D98;
+$orange: #FDBF90;
+$olive: #CFDBBB;
+
 
 // Background Color
-$base-background-color: white;
+$base-background-color: $light-green;
 
 // Font Colors
 $base-font-color: $dark-gray;
@@ -55,11 +59,11 @@ $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
 
 // Forms
-$form-border-color: $base-border-color;
-$form-border-color-hover: darken($base-border-color, 10);
-$form-border-color-focus: $base-accent-color;
+$form-border-color: $olive;
+$form-border-color-hover: darken($olive, 10);
+$form-border-color-focus: $olive;
 $form-border-radius: $base-border-radius;
-$form-box-shadow: inset 0 1px 3px rgba(black,0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-box-shadow: inset 0 0px 0px;
+$form-box-shadow-focus: $form-box-shadow, 0 0 0px rgba(darken($form-border-color-focus, 20), 0.7);
 $form-font-size: $base-font-size;
 $form-font-family: $base-font-family;

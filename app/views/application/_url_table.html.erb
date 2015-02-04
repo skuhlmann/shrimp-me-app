@@ -1,28 +1,35 @@
-<label for="searchbox"> Search by page title</label>
-<input type="text" id="searchbox">
+<div id="section-heading">
+  <h3>Active Shrimpy Urls</h3>
+</div>
 
-<table id="active-shrimps" name="active-shrimps">
-  <thead>
-    <tr>
-      <th>Page Title</th>
-      <th>Shrimped Url</th>
-      <th>
-        <%= form_tag do %>
-          <%= label_tag(:sort_popularity, "Visits (click to sort by popularity)") %>
-          <%= radio_button_tag(:sort, "popularity") %>
-        <% end %>
-      </th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% urls.each do |url| %>
-    <tr>
-      <td class="page-title"><%= url.title %></td>
-      <td><%= "shrimpy.me/#{url.slug}" %></td>
-      <td><%= url.visits.count %></td>
-      <td><%= link_to "Test Me", url_path(url.slug) %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<div id="search-form">
+  <label for="searchbox"> Search by page title</label>
+  <input type="text" id="searchbox">
+</div>
+
+  <table id="active-shrimps" name="active-shrimps">
+    <thead>
+      <tr>
+        <th>Page Title</th>
+        <th>Shrimped Url</th>
+        <th id="visits-label">
+          Visits
+          <div id="sort-radio">
+            <%= form_tag do %>
+              <%= label_tag(:sort_popularity, "click to sort by popularity") %>
+              <%= radio_button_tag(:sort, "popularity") %>
+            <% end %>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+    <% urls.each do |url| %>
+      <tr>
+        <td class="page-title"><%= url.title %></td>
+        <td><%= link_to "shrimpy.me/#{url.slug}", url_path(url.slug) %></td>
+        <td><%= url.visits.count %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>

@@ -21,4 +21,15 @@ tr,
 td,
 th {
   vertical-align: middle;
+  text-align: left;
+}
+
+#sort-radio{
+  float: right;
+  margin-right: 40px;
+  font-size: 10px;
+}
+
+#visits-label {
+  width: 25%;
 }

@@ -18,7 +18,7 @@ class UrlsController < ApplicationController
   def create
     @url = Url.create(url_params)
     if @url.save
-      flash[:notice] = "Your URL has been shrimped"
+      flash[:notice] = "Your URL has been shrimped: http://shrimpy.me/#{@url.slug}"
       redirect_to root_path
     else
       render :index
