@@ -19,7 +19,6 @@ $(document).ready(
 
           $('.hidden').hide();
           $('.searchResult').show();
-
        }
 
        else if (searchText.length == 0) {
