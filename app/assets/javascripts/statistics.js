@@ -1,8 +1,10 @@
 $(document).ready(function(){
 
+  var first_rows = $('#active-shrimps tbody tr');
+
   function sortTable(){
 
-    var rows = $('#active-shrimps tbody tr').get();
+    var rows = first_rows.get();
 
     rows.sort(function(a, b) {
 
@@ -25,7 +27,11 @@ $(document).ready(function(){
     });
   }
 
-  $("#sort_popularity").click(function(){
-    sortTable();
+  $("#sort").click(function(){
+    if ($('#sort').prop('checked')) {
+      sortTable();
+    } else {
+     $('#active-shrimps').children('tbody').append(first_rows);
+    }
   });
 });
