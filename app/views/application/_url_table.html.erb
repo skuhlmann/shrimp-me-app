@@ -16,8 +16,8 @@
           Visits
           <div id="sort-radio">
             <%= form_tag do %>
-              <%= label_tag(:sort_popularity, "click to sort by popularity") %>
-              <%= radio_button_tag(:sort, "popularity") %>
+              <%= label_tag(:sort_popularity, "show most popular") %>
+              <%= check_box_tag(:sort, "popularity") %>
             <% end %>
           </div>
         </th>
