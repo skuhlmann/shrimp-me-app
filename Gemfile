@@ -26,6 +26,7 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
+gem "validate_url"
 
 group :development do
   gem "spring"

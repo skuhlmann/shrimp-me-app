@@ -261,6 +261,9 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    validate_url (1.0.0)
+      activemodel (>= 3.0.0)
+      addressable
     web-console (2.0.0)
       activemodel (~> 4.0)
       binding_of_caller (>= 0.7.2)
@@ -318,5 +321,6 @@ DEPENDENCIES
   title
   uglifier
   unicorn
+  validate_url
   web-console
   webmock

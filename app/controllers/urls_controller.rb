@@ -20,7 +20,7 @@ class UrlsController < ApplicationController
       flash[:notice] = "Your URL has been shrimped: http://shrimpy.me/#{@url.slug}"
       redirect_to root_path
     else
-      render :index
+      redirect_to root_path
     end
   end
 

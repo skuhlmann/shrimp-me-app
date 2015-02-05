@@ -3,6 +3,7 @@ class Url < ActiveRecord::Base
 
   validates :full_url, presence: true
   validates :slug, uniqueness: true
+  validates :full_url, url: true
 
   before_save :generate_slug
   before_save :grab_title
