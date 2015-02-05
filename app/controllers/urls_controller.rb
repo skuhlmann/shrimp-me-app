@@ -10,7 +10,6 @@ class UrlsController < ApplicationController
       Visit.create(url_id: @url.id)
       redirect_to @url.full_url
     else
-      flash[:notice] = "Redirect doesn't exist"
       redirect_to root_path
     end
   end
