@@ -21,6 +21,7 @@ gem "rack-timeout"
 gem "rails", "4.2.0"
 gem "recipient_interceptor"
 gem "refills"
+gem 'responders', '~> 2.0'
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
