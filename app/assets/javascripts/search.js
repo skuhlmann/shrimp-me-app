@@ -5,26 +5,14 @@ $(document).ready(
       var searchText = $(this).val();
 
        if (searchText.length > 0) {
-         $('tbody tr page-title:contains('+searchText+')')
-          .addClass('searchResult');
-         $('.searchResult')
-          .not(':contains('+searchText+')')
-          .removeClass('searchResult');
-
-          $('tbody tr')
-            .not(':contains('+searchText+')')
-            .addClass('hidden');
-          $('.hide:contains('+searchText+')')
-            .removeClass('hidden');
-
-          $('.hidden').hide();
-          $('.searchResult').show();
+         $('tbody tr').hide()
+         .filter(function (index, element) {
+           return!!(element.innerHTML.match(searchText));
+         }).show();
        }
 
        else if (searchText.length == 0) {
-         $('.searchResult').removeClass('searchResult');
-         $('.hidden').removeClass('hidden');
-         $('tr').show();
+         $('tbody tr').show()
        }
     });
 });
