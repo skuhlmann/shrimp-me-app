@@ -16,7 +16,6 @@ RSpec.describe Url, :type => :model do
     expect(url).not_to be_valid
   end
 
-
   it "generates a random slug" do
     url = create(:url)
 
