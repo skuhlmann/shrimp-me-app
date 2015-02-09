@@ -6,7 +6,6 @@ RSpec.describe Api::V1::UrlsController do
   it "can create a url record" do
     post(:create, format: :json, url: {full_url: "http://google.com"})
     result = JSON.parse(response.body)
-    binding.pry
 
     expect(result["slug"]).to eq(Url.last.slug)
     expect(result["title"]).to eq("Google")
